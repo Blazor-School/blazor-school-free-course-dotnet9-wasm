@@ -1,0 +1,11 @@
+﻿@page "/compiler-alternative"
+@implements IDisposable
+
+<h3>The @@implements directive enforces this component to declare the Dispose method. If the Dispose method is not present, Visual Studio will not compile the project.</h3>
+
+@code {
+    public void Dispose()
+    {
+        // If this method is removed, the copilier won't compile
+    }
+}
