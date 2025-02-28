@@ -3,7 +3,7 @@
 <button type="button" class="btn btn-primary" onclick="alert('Hello Blazor School!')">Handle with JavaScript</button>
 <button type="button" class="btn btn-primary" onclick="alert(`Is holding Ctrl? ${event.ctrlKey}`)">Handle with JavaScript with event args</button>
 <button type="button" class="btn btn-primary" @onclick="IncrementCount">Handle with C# (@currentCount clicked)</button>
-<button type="button" class="btn btn-primary" @onclick="IncrementCountWithMouseEvent">Handle with C# with event args (Is holding Ctrl? @isHoldingCtrl)</button>
+<button type="button" class="btn btn-primary" @onclick="HandleHTMLEventWithMouseEvent">Handle with C# with event args (Is holding Ctrl? @isHoldingCtrl)</button>
 
 @code {
     private int currentCount = 0;
@@ -14,7 +14,7 @@
         currentCount++;
     }
 
-    private void IncrementCountWithMouseEvent(MouseEventArgs e)
+    private void HandleHTMLEventWithMouseEvent(MouseEventArgs e)
     {
         isHoldingCtrl = e.CtrlKey;
     }
