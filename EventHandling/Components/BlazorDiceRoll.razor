@@ -1,0 +1,8 @@
+﻿<button class="btn btn-primary" type="button" @onclick="RollTheDice">Roll Dice!</button>
+
+@code {
+    [Parameter]
+    public EventCallback<int> OnDiceRolled { get; set; }
+
+    public void RollTheDice() => OnDiceRolled.InvokeAsync(new Random().Next(1, 6));
+}

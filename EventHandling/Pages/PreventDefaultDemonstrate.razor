@@ -1,0 +1,18 @@
+﻿@page "/prevent-default-demonstrate"
+
+<label>
+    <input type="checkbox" @onclick="_ => showMessage = true" @onclick:preventDefault />
+    @if (showMessage)
+    {
+        <p>The checkbox can't be checked because the <code>onclick</code> event was cancelled with <code>@@onclick:preventDefault</code> keyword.</p>
+    }
+    else
+    {
+        <p>Click the checkbox</p>
+    }
+</label>
+
+
+@code {
+    private bool showMessage = false;
+}

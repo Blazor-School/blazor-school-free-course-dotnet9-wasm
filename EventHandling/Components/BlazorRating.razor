@@ -1,7 +1,12 @@
-﻿<label>
-    <input type="radio" name="rating" />
-</label>
+﻿<div class="d-flex flex-column">
+    <label><input type="radio" name="rating" @onchange="On5StarsSelected" />*****</label>
+    <label><input type="radio" name="rating" />****</label>
+    <label><input type="radio" name="rating" />***</label>
+    <label><input type="radio" name="rating" />**</label>
+    <label><input type="radio" name="rating" />*</label>
+</div>
 
 @code {
-    public EventCallback
+    [Parameter]
+    public EventCallback On5StarsSelected { get; set; }
 }

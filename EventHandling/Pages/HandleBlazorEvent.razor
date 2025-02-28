@@ -1,0 +1,21 @@
+﻿@page "/handle-blazor-events"
+
+<p>How much do you love Blazor? Select 5 stars to increase this number @selected5StarsCount.</p>
+<BlazorRating On5StarsSelected="IncrementCount" />
+<p>Roll the dice. Current dice face: @currentDiceFace</p>
+<BlazorDiceRoll OnDiceRolled="UpdateDiceFace" />
+
+@code {
+    private int selected5StarsCount = 0;
+    private int? currentDiceFace;
+
+    private void IncrementCount()
+    {
+        selected5StarsCount++;
+    }
+
+    private void UpdateDiceFace(int diceFace)
+    {
+        currentDiceFace = diceFace;
+    }
+}
