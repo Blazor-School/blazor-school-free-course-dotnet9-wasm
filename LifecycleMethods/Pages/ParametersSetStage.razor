@@ -21,7 +21,10 @@ Current Url: @NavigationManager.Uri
     [SupplyParameterFromQuery]
     public string? UrlParameter { get; set; } = "";
 
-    protected override void OnParametersSet() => JSRuntime.InvokeVoidAsync("alert", "ParametersSet stage of the PARENT component triggered.");
+    protected override void OnParametersSet()
+    {
+        JSRuntime.InvokeVoidAsync("alert", "ParametersSet called in PARENT component.");
+    }
 
     private string RandomString()
     {
