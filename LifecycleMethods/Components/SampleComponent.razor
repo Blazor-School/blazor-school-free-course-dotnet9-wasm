@@ -1,6 +1,7 @@
 ﻿@using LifecycleMethods.Services
 @inject LoggingService LoggingService
 @implements IDisposable
+@implements IAsyncDisposable
 
 <h3>Sample Component</h3>
 
@@ -18,4 +19,5 @@
     protected override void OnParametersSet() => LoggingService.Logs.Add("OnParametersSet");
     protected override async Task OnParametersSetAsync() => LoggingService.Logs.Add("OnParametersSetAsync");
     public void Dispose() => LoggingService.Logs.Add("Dispose");
+    public async ValueTask DisposeAsync() => LoggingService.Logs.Add("DisposeAsync");
 }
