@@ -1,0 +1,17 @@
+﻿@inject IJSRuntime JSRuntime
+
+<h3>Begin ChildComponent</h3>
+<p>Component Parameter: @ComponentParameter</p>
+<h3>End of ChildComponent</h3>
+
+@code {
+    [Parameter]
+    public string ComponentParameter { get; set; } = "";
+
+    private string oldParameter = "";
+
+    protected override void OnParametersSet()
+    {
+        JSRuntime.InvokeVoidAsync("alert", "ParametersSet stage of the CHILD component triggered.");
+    }
+}

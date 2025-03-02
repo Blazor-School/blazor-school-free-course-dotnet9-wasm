@@ -1,0 +1,35 @@
+﻿@page "/component-states-demonstrate"
+@using LifecycleMethods.Components
+@using LifecycleMethods.Services
+@inject LoggingService LoggingService
+@implements IDisposable
+
+<div class="d-flex flex-row gap-5">
+    <div class="d-flex flex-column w-50">
+        <button type="button" @onclick="() => RenderComponent = !RenderComponent">@(RenderComponent ? "Destroy Component" : "Render Component")</button>
+        <div>
+            @if (RenderComponent)
+            {
+                <SampleComponent />
+            }
+        </div>
+    </div>
+    <div class="d-flex flex-column w-50">
+        <button type="button" @onclick="() => LoggingService.Logs.Clear()">Clear Logs</button>
+
+        <div>
+            @foreach (string log in LoggingService.Logs)
+            {
+                <p><strong>@log</strong> called</p>
+            }
+        </div>
+    </div>
+</div>
+
+
+@code {
+    protected override void OnInitialized() => LoggingService.Logs.CollectionChanged += RefreshPage;
+    public void Dispose() => LoggingService.Logs.CollectionChanged -= RefreshPage;
+    private void RefreshPage(object? sender, EventArgs args) => InvokeAsync(StateHasChanged);
+    public bool RenderComponent { get; set; } = false;
+}

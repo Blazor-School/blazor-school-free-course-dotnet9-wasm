@@ -1,0 +1,23 @@
+﻿@page "/set-parameters"
+@inject IJSRuntime JSRuntime
+
+<h3>SetParametersStage</h3>
+
+@code {
+    public async Task CustomLifecycleMethodAsync()
+    {
+        await JSRuntime.InvokeVoidAsync("alert", "This is a custom lifecycle method");
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await JSRuntime.InvokeVoidAsync("alert", "OnInitializedAsync stage will never called");
+    }
+
+    public override async Task SetParametersAsync(ParameterView parameters)
+    {
+        // To enable default lifecycle stages, uncomment the following line
+        // await base.SetParametersAsync(parameters);
+        await CustomLifecycleMethodAsync();
+    }
+}

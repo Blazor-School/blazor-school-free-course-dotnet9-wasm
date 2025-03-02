@@ -1,0 +1,8 @@
+﻿@page "/after-render"
+@inject IJSRuntime JSRuntime
+
+<button @onclick="StateHasChanged">Trigger AfterRender</button>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender) => await JSRuntime.InvokeVoidAsync("alert", $"AfterRender stage triggered with firstRender is {firstRender}");
+}
