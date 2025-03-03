@@ -6,7 +6,6 @@
 @code {
     public async Task CustomLifecycleMethodAsync()
     {
-        StateHasChanged();
         await JSRuntime.InvokeVoidAsync("alert", "This is a custom lifecycle method");
     }
 
@@ -24,6 +23,11 @@
     {
         // To enable initialize and parameter set stages, uncomment the following line
         // await base.SetParametersAsync(parameters);
+
+        // Because we skipped the base method, we need to manually set the parameters and update the UI
+        parameters.SetParameterProperties(this);
+        StateHasChanged();
+
         await CustomLifecycleMethodAsync();
     }
 }
