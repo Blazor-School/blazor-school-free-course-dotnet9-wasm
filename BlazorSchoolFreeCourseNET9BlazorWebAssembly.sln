@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandling", "EventHandl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifecycleMethods", "LifecycleMethods\LifecycleMethods.csproj", "{7DDEA2FC-AE2C-424F-8878-40532BF21194}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentCommunication", "ComponentCommunication\ComponentCommunication.csproj", "{8390915A-8CF8-4413-957F-F5D40DDA673C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorComponentRendering", "RazorComponentRendering\RazorComponentRendering.csproj", "{A2F8F698-4F98-4A32-BEDA-339B670D9C45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{7DDEA2FC-AE2C-424F-8878-40532BF21194}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DDEA2FC-AE2C-424F-8878-40532BF21194}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DDEA2FC-AE2C-424F-8878-40532BF21194}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8390915A-8CF8-4413-957F-F5D40DDA673C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8390915A-8CF8-4413-957F-F5D40DDA673C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8390915A-8CF8-4413-957F-F5D40DDA673C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8390915A-8CF8-4413-957F-F5D40DDA673C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F8F698-4F98-4A32-BEDA-339B670D9C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F8F698-4F98-4A32-BEDA-339B670D9C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F8F698-4F98-4A32-BEDA-339B670D9C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F8F698-4F98-4A32-BEDA-339B670D9C45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
