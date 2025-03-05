@@ -1,0 +1,6 @@
+﻿<div @attributes="AdditionalAttributes">Slogan</div>
+
+@code {
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> AdditionalAttributes { get; set; } = [];
+}

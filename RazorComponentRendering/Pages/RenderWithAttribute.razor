@@ -1,0 +1,12 @@
+﻿@page "/render-with-attribute"
+
+<div @attributes="customAttributes">RenderWithAttribute</div>
+<Slogan class="text-bg-warning" data-author="Blazor School" />
+
+@code {
+    Dictionary<string, object> customAttributes = new Dictionary<string, object>
+    {
+        { "class", "text-bg-primary" },
+        { "data-name", "Blazor School" }
+    };
+}
