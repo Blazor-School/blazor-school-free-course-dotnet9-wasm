@@ -1,0 +1,62 @@
+﻿@page "/self-render-demonstrate"
+
+@foreach (var node in Nodes)
+{
+    <TreeNode Node="node" />
+}
+
+<label>
+    Select base node:
+    <InputSelect @bind-Value="SelectedNode">
+        @foreach (var node in NodeDictionary)
+        {
+            <option checked="@(node.Key == SelectedNode)" value="@node.Key">@node.Key</option>
+        }
+    </InputSelect>
+
+    <button @onclick="AddSiblingNode">Add Sibling Node</button>
+    <button @onclick="AddChildNode">Add Child Node</button>
+</label>
+
+@code {
+    public Dictionary<string, TreeNodeData> NodeDictionary { get; set; } = [];
+    public List<TreeNodeData> Nodes { get; set; } = [];
+    public string SelectedNode { get; set; } = "";
+    private Random _random = new Random();
+
+    protected override void OnInitialized()
+    {
+        string randomName = RandomString();
+        var newNode = new TreeNodeData(randomName, new List<TreeNodeData>());
+        NodeDictionary.Add(randomName, newNode);
+        Nodes.Add(newNode);
+        SelectedNode = randomName;
+    }
+
+    public void AddSiblingNode()
+    {
+        string randomName = RandomString();
+        var newNode = new TreeNodeData(randomName, new List<TreeNodeData>());
+        NodeDictionary.Add(randomName, newNode);
+        int index = Nodes.FindIndex(x => x.Name == SelectedNode);
+        Nodes.Insert(index + 1, newNode);
+        SelectedNode = randomName;
+    }
+
+    public void AddChildNode()
+    {
+        string randomName = RandomString();
+        var parentNode = NodeDictionary[SelectedNode];
+        var newNode = new TreeNodeData(randomName, new List<TreeNodeData>());
+        NodeDictionary.Add(randomName, newNode);
+        parentNode.Children.Add(newNode);
+        SelectedNode = randomName;
+    }
+
+    private string RandomString()
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        return new string(Enumerable.Repeat(chars, 5).Select(s => s[_random.Next(s.Length)]).ToArray());
+    }
+}
