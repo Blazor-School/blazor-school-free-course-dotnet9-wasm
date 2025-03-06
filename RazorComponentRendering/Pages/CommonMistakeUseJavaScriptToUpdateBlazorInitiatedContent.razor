@@ -1,7 +1,9 @@
 ﻿@page "/common-mistake-use-javascript-to-update-blazor-initiated-content"
 
-<div id="TestElement" data-attribute="blazor-managed-attribute">Hello Blazor School</div>
+<div id="TestElement">@BlazorManagedValue</div>
+<button type="button" @onclick='_ => BlazorManagedValue = "Updated by Blazor"'>Update Value with Blazor</button>
+<button type="button" onclick="updateAttribute()">Update Value with JavaScript</button>
 
 @code {
-
+    public string BlazorManagedValue { get; set; } = "Initiated by Blazor";
 }
