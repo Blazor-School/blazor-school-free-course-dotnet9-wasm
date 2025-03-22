@@ -2,21 +2,16 @@
 
 <label>
     Give me a string
-    <InputText @bind-Value="Text" />
-</label>
-<label>
-    Manual Render?
-    <InputCheckbox @bind-Value="ManualRender" />
+    <input type="text" @bind-value="Text" @bind-value:event="oninput" />
 </label>
 
 <div>Your string: @Text</div>
 
 @code {
     public string Text { get; set; } = "";
-    public bool ManualRender { get; set; } = true;
 
     protected override bool ShouldRender()
     {
-        return !ManualRender;
+        return Text.Length > 3;
     }
 }
