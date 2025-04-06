@@ -1,0 +1,14 @@
+﻿<div class="bg-success p-5">
+    <h3>Component2 (level 1)</h3>
+    <div>@PersonName:</div>
+    <Component3 HelloMessage="@HelloMessage" />
+</div>
+
+@code {
+    // Bad practice: redundant parameter declaration. To improve this, use [CascadingParameter] instead of [Parameter]
+    [Parameter]
+    public string HelloMessage { get; set; } = "";
+
+    [Parameter]
+    public string PersonName { get; set; } = "";
+}

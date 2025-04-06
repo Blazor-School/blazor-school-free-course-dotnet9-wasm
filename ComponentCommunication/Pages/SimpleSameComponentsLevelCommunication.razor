@@ -1,0 +1,11 @@
+﻿@page "/simple-same-components-level-communication"
+@using ComponentCommunication.Components.SameLevelCommunication.Simple
+
+<div class="d-flex flex-row gap-2 text-white">
+    <Component1 Message="@HelloMessage" />
+    <Component2 Message="@HelloMessage" />
+</div>
+
+@code {
+    public string HelloMessage { get; set; } = "Hello Blazor School!";
+}

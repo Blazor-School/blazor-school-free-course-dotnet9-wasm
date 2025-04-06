@@ -1,0 +1,10 @@
+﻿<div class="bg-success p-5">
+    <h3>Component2 (level 1)</h3>
+    <div>@PersonName:</div>
+    <Component3 />
+</div>
+
+@code {
+    [Parameter]
+    public string PersonName { get; set; } = "";
+}
