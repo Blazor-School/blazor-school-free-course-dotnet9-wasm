@@ -1,0 +1,12 @@
+﻿<div class="bg-primary p-5">
+    <h3>Component3 (level 0)</h3>
+    <div>@PersonName: @HelloMessage I am @PersonName.</div>
+</div>
+
+@code {
+    [CascadingParameter(Name = "SayHelloMessage")]
+    public string HelloMessage { get; set; } = "";
+
+    [CascadingParameter(Name = "CurrentUserName")]
+    public string PersonName { get; set; } = "";
+}

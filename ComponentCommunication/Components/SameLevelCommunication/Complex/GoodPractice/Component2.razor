@@ -1,0 +1,9 @@
+﻿<div class="bg-success p-5">
+    <h3>Component2 (level 1)</h3>
+    <div>@HelloMessage</div>
+</div>
+
+@code {
+    [CascadingParameter(Name = "SayHelloMessage")]
+    public string HelloMessage { get; set; } = "";
+}
