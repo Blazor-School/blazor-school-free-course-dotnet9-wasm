@@ -1,4 +1,4 @@
-﻿namespace ComponentCommunication.Components.SingleSourceOfTrurth;
+﻿namespace ComponentCommunication.Components.SingleSourceOfTruth;
 
 // This class is registered as a service in the Program.cs file.
 public class BlazorSchoolTransferService

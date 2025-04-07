@@ -1,7 +1,7 @@
+using ComponentCommunication;
+using ComponentCommunication.Components.SingleSourceOfTruth;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using ComponentCommunication;
-using ComponentCommunication.Components.SingleSourceOfTrurth;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

@@ -1,0 +1,17 @@
+﻿@page "/single-source-of-truth"
+@using ComponentCommunication.Components.SingleSourceOfTruth
+@inject BlazorSchoolTransferService BlazorSchoolTransferService
+
+<p>Values at the set in the page level:</p>
+<p>SayHelloMessage: @BlazorSchoolTransferService.HelloMessage</p>
+<div class="d-flex flex-row gap-2 text-white">
+    <Component1 />
+    <Component4 />
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        BlazorSchoolTransferService.HelloMessage = "Hello Blazor School!";
+    }
+}
