@@ -1,0 +1,15 @@
+﻿@page "/bad-complex-same-level-communication"
+@using ComponentCommunication.Components.SameLevelCommunication.Complex.BadPractice
+
+<p>Values at the page level:</p>
+<p>SayHelloMessage: @SayHelloMessage</p>
+<p>CurrentUserName: @CurrentUserName</p>
+<div class="d-flex flex-row gap-2 text-white">
+    <Component1 HelloMessage="@SayHelloMessage" PersonName="@CurrentUserName" />
+    <Component3 HelloMessage="@SayHelloMessage" PersonName="@CurrentUserName" />
+</div>
+
+@code {
+    public string SayHelloMessage { get; set; } = "Hello Blazor School!";
+    public string CurrentUserName { get; set; } = "John Doe";
+}
