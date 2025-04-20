@@ -1,6 +1,6 @@
 ﻿@page "/good-complex-same-level-communication"
 
-@using ComponentCommunication.Components.SameLevelCommunication.Complex.BadPractice
+@using ComponentCommunication.Components.SameLevelCommunication.Complex.GoodPractice
 
 <p>Values at the page level:</p>
 <p>SayHelloMessage: @SayHelloMessage</p>
@@ -8,8 +8,8 @@
 <div class="d-flex flex-row gap-2 text-white">
     <CascadingValue Value="@CurrentUserName" Name="CurrentUserName">
         <CascadingValue Value="@SayHelloMessage" Name="SayHelloMessage">
-            <Component1 HelloMessage="@SayHelloMessage" PersonName="@CurrentUserName" />
-            <Component3 HelloMessage="@SayHelloMessage" PersonName="@CurrentUserName" />
+            <Component1 />
+            <Component3 />
         </CascadingValue>
     </CascadingValue>
 </div>
