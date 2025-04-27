@@ -1,0 +1,22 @@
+﻿@using CascadingParameterInDetail.Models
+
+<div class="bg-success p-5 text-white">
+    <h3>Component2 (level 1)</h3>
+    <div>Message: @Sample?.Message</div>
+    <button type="button" @onclick="OverrideValueAsync">Override Value</button>
+    <Component3 />
+</div>
+
+@code {
+    [CascadingParameter]
+    public RootLevelNotifyingModel? Sample { get; set; }
+
+    public async Task OverrideValueAsync()
+    {
+        if (Sample is not null && Sample.Source is not null)
+        {
+            Sample.Message = "Overridden from Component2";
+            await Sample.Source.NotifyChangedAsync();
+        }
+    }
+}
