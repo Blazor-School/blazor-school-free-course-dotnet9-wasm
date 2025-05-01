@@ -1,0 +1,30 @@
+﻿@using CascadingParameterInDetail.Models
+@using CascadingParameterInDetail.Pages
+
+<div class="bg-danger p-5 text-white">
+    <h3>Component3 (level 2)</h3>
+    <div>Message: @Sample?.Message</div>
+    <button type="button" @onclick="UpdateAtLevel1">Update at level 1</button>
+    <button type="button" @onclick="UpdateAtRoot">Update at root</button>
+</div>
+
+@code {
+    [CascadingParameter]
+    public UsingCascadingValueModel? Sample { get; set; }
+
+    [CascadingParameter]
+    public Component2? Component2 { get; set; }
+
+    [CascadingParameter]
+    public OverrideCascadingValueExample? Root { get; set; }
+
+    public void UpdateAtLevel1()
+    {
+        Component2?.UpdateModel("Updated from Component3");
+    }
+
+    public void UpdateAtRoot()
+    {
+        Root?.UpdateModel("Updated from Component3");
+    }
+}

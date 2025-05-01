@@ -2,8 +2,8 @@
 
 namespace CascadingParameterInDetail.Models;
 
-public class RootLevelNotifyingModel
+public class RootLevelUpdatingModel
 {
     public string Message { get; set; } = "";
-    public CascadingValueSource<RootLevelNotifyingModel>? Source { get; set; }
+    public CascadingValueSource<RootLevelUpdatingModel>? Source { get; set; }
 }

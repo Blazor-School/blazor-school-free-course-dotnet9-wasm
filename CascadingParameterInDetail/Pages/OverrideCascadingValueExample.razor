@@ -1,0 +1,22 @@
+﻿@page "/override-cascading-value-example"
+@using CascadingParameterInDetail.Components.UsingCascadingValue.Overriding
+@using CascadingParameterInDetail.Models
+
+<CascadingValue Value="this">
+    <CascadingValue Value="Model">
+        <Component1 />
+    </CascadingValue>
+</CascadingValue>
+
+@code {
+    public UsingCascadingValueModel Model { get; set; } = new()
+        {
+            Message = "Hello from OverrideCascadingValueExample"
+        };
+
+    public void UpdateModel(string message)
+    {
+        Model.Message = message;
+        StateHasChanged();
+    }
+}

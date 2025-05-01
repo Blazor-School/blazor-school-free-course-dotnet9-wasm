@@ -1,0 +1,25 @@
+﻿@using CascadingParameterInDetail.Models
+@using CascadingParameterInDetail.Pages
+
+<div class="bg-success p-5 text-white">
+    <h3>Component2 (level 1)</h3>
+    <div>Message: @Sample?.Message</div>
+    <button type="button" @onclick="OverrideValueAsync">Override Value</button>
+    <Component3 />
+</div>
+
+@code {
+    [CascadingParameter]
+    public UsingCascadingValueModel? Sample { get; set; }
+
+    [CascadingParameter]
+    public UpdateCascadingValueExample? Source { get; set; }
+
+    public async Task OverrideValueAsync()
+    {
+        if (Source is not null)
+        {
+            Source.UpdateModelMessage("Overridden from Component2");
+        }
+    }
+}

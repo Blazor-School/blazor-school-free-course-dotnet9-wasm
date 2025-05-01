@@ -1,0 +1,22 @@
+﻿@page "/update-cascading-value-example"
+@using CascadingParameterInDetail.Components.UsingCascadingValue.Update
+@using CascadingParameterInDetail.Models
+
+<CascadingValue Value="this">
+    <CascadingValue Value="Model">
+        <Component1 />
+    </CascadingValue>
+</CascadingValue>
+
+@code {
+    public UsingCascadingValueModel Model { get; set; } = new()
+        {
+            Message = "Hello from UpdateCascadingValueExample"
+        };
+
+    public void UpdateModelMessage(string message)
+    {
+        Model.Message = message;
+        StateHasChanged();
+    }
+}

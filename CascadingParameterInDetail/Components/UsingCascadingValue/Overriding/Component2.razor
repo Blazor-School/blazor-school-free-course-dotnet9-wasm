@@ -1,0 +1,25 @@
+﻿@using CascadingParameterInDetail.Models
+@using CascadingParameterInDetail.Pages
+
+<div class="bg-success p-5 text-white">
+    <h3>Component2 (level 1)</h3>
+    <div>Message: @OverridingSample.Message</div>
+    <CascadingValue Value="this">
+        <CascadingValue Value="OverridingSample">
+            <Component3 />
+        </CascadingValue>
+    </CascadingValue>
+</div>
+
+@code {
+    public UsingCascadingValueModel OverridingSample { get; set; } = new UsingCascadingValueModel()
+    {
+        Message = "Overridden from Component2"
+    };
+
+    public void UpdateModel(string message)
+    {
+        OverridingSample.Message = message;
+        StateHasChanged();
+    }
+}

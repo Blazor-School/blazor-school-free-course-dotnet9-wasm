@@ -20,12 +20,12 @@ builder.Services.AddCascadingValue<RootLevelSampleModel>("Variant2", sp => new()
 
 builder.Services.AddCascadingValue(sp =>
 {
-    var value = new RootLevelNotifyingModel()
+    var value = new RootLevelUpdatingModel()
     {
         Message = "Hello Blazor School! (With Notifying)",
     };
 
-    value.Source = new CascadingValueSource<RootLevelNotifyingModel>(value, false);
+    value.Source = new CascadingValueSource<RootLevelUpdatingModel>(value, false);
 
     return value.Source;
 });

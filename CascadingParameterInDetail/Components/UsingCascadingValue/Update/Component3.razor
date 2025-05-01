@@ -1,0 +1,11 @@
+﻿@using CascadingParameterInDetail.Models
+
+<div class="bg-danger p-5 text-white">
+    <h3>Component3 (level 2)</h3>
+    <div>Message: @Sample?.Message</div>
+</div>
+
+@code {
+    [CascadingParameter]
+    public UsingCascadingValueModel? Sample { get; set; }
+}

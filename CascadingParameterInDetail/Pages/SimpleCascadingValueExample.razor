@@ -1,0 +1,14 @@
+﻿@page "/simple-cascading-value-example"
+@using CascadingParameterInDetail.Components.UsingCascadingValue.Simple
+@using CascadingParameterInDetail.Models
+
+<CascadingValue Value="Model" IsFixed="true">
+    <Component1 />
+</CascadingValue>
+
+@code {
+    public UsingCascadingValueModel Model { get; set; } = new()
+    {
+        Message = "Hello from SimpleCascadingValueExample"
+    };
+}
