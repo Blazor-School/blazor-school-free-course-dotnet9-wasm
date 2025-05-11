@@ -4,7 +4,7 @@
 <div class="bg-success p-5 text-white">
     <h3>Component2 (level 1)</h3>
     <div>Message: @Sample?.Message</div>
-    <button type="button" @onclick="OverrideValueAsync">Override Value</button>
+    <button type="button" @onclick="UpdateValueAsync">Update Value</button>
     <Component3 />
 </div>
 
@@ -15,11 +15,11 @@
     [CascadingParameter]
     public UpdateCascadingValueExample? Source { get; set; }
 
-    public async Task OverrideValueAsync()
+    public async Task UpdateValueAsync()
     {
         if (Source is not null)
         {
-            Source.UpdateModelMessage("Overridden from Component2");
+            Source.UpdateModelMessage("Update from Component2");
         }
     }
 }
