@@ -1,0 +1,5 @@
+- Demonstrate simple scenario of passing a parameter from parent to child component.
+- Demonstrate changes in child component will not affect parent component by default.
+- Demonstrate how to detect changes from child component using EventCallback.
+- Demonstrate how to detect changes from child component using bind-*.
+- Demonstrate bind-*:get, bind-*:set*, and bind-*:after.
