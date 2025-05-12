@@ -1,0 +1,16 @@
+﻿<div class="bg-primary p-5">
+    <h3>Parent</h3>
+    <div>Value: @ParentValue</div>
+    <Child Value="ParentValue" />
+</div>
+
+@code {
+    [Parameter]
+    public int ParentValue { get; set; } = 0;
+
+    public void ChangeRandomValue()
+    {
+        var random = new Random();
+        ParentValue = random.Next(0, 100);
+    }
+}
