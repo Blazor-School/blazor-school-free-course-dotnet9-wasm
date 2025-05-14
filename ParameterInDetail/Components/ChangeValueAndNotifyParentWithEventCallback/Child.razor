@@ -1,0 +1,22 @@
+﻿<div class="bg-success p-5">
+    <h3>Child</h3>
+    <div>Value: @Value</div>
+    <button @onclick="ChangeRandomValue" type="button">Change Value</button>
+</div>
+
+@code {
+    [Parameter]
+    public int Value { get; set; }
+
+    [Parameter]
+    public EventCallback<int> ValueChanged { get; set; }
+
+    public void ChangeRandomValue()
+    {
+        var random = new Random();
+        // Should not change the value directly in the child component. Notify the parent and let the child component render the new value
+        // Value = random.Next(0, 100);
+        // Notify the parent component about the change
+        ValueChanged.InvokeAsync(random.Next(0, 100));
+    }
+}

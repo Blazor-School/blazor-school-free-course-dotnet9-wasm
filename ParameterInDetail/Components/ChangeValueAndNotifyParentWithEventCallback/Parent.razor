@@ -1,0 +1,14 @@
+﻿<div class="bg-primary p-5">
+    <h3>Parent</h3>
+    <div>Value: @ParentValue</div>
+    <Child Value="ParentValue" ValueChanged="ParentValueChanged" />
+</div>
+
+@code {
+    public int ParentValue { get; set; } = 0;
+
+    public void ParentValueChanged(int newValue)
+    {
+        ParentValue = newValue;
+    }
+}
