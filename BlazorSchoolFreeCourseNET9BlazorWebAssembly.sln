@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CascadingParameterInDetail"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParameterInDetail", "ParameterInDetail\ParameterInDetail.csproj", "{6548321E-9AB7-40E5-8A07-1D8EB205D018}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleSourceOfTruth", "SingleSourceOfTruth\SingleSourceOfTruth.csproj", "{74A44B60-52EC-4D63-BCD7-5D446F188919}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{6548321E-9AB7-40E5-8A07-1D8EB205D018}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6548321E-9AB7-40E5-8A07-1D8EB205D018}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6548321E-9AB7-40E5-8A07-1D8EB205D018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74A44B60-52EC-4D63-BCD7-5D446F188919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74A44B60-52EC-4D63-BCD7-5D446F188919}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74A44B60-52EC-4D63-BCD7-5D446F188919}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74A44B60-52EC-4D63-BCD7-5D446F188919}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,17 @@
+﻿<div class="bg-primary p-5">
+    <h3>Component4</h3>
+    <div>Value: @SharedData.Value</div>
+    <button type="button" @onclick="ChangeValue">Change Value</button>
+</div>
+
+@code {
+    [CascadingParameter]
+    public CascadingParameterSharedData SharedData { get; set; }
+
+    public void ChangeValue()
+    {
+        var random = new Random();
+        SharedData.Value = random.Next(1, 100);
+        SharedData.Source.NotifyChangedAsync();
+    }
+}
