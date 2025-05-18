@@ -1,22 +1,31 @@
 ﻿<div class="bg-success p-5">
     <h3>Child</h3>
-    <div>Value: @Value</div>
+    <div>Value1: @Value1</div>
+    <div>Value2: @Value2</div>
+    <div>Value3: @Value3</div>
     <button @onclick="ChangeRandomValue" type="button">Change Value</button>
 </div>
 
 @code {
     [Parameter]
-    public int Value { get; set; }
+    public int Value1 { get; set; }
 
     [Parameter]
-    public EventCallback<int> ComponentUpdated { get; set; }
+    public int Value2 { get; set; }
+
+    [Parameter]
+    public int Value3 { get; set; }
+
+    [Parameter]
+    public EventCallback<ChildComponentChangeArgument> ComponentUpdated { get; set; }
 
     public void ChangeRandomValue()
     {
         var random = new Random();
-        // Should not change the value directly in the child component. Notify the parent and let the child component render the new value
-        // Value = random.Next(0, 100);
+        int newValue1 = random.Next(0, 100);
+        int newValue2 = random.Next(0, 100);
+        int newValue3 = random.Next(0, 100);
         // Notify the parent component about the change
-        ComponentUpdated.InvokeAsync(random.Next(0, 100));
+        ComponentUpdated.InvokeAsync(new(newValue1, newValue2, newValue3));
     }
 }

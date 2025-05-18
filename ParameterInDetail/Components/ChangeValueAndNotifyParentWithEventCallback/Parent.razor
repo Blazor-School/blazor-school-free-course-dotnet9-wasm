@@ -1,17 +1,20 @@
 ﻿<div class="bg-primary p-5">
     <h3>Parent</h3>
-    <div>Value: @ParentValue</div>
-    <div>Change Count: @ChangeCount</div>
-    <Child Value="ParentValue" ComponentUpdated="OnComponentChanged" />
+    <div>Value1: @ParentValue1</div>
+    <div>Value2: @ParentValue2</div>
+    <div>Value3: @ParentValue3</div>
+    <Child Value1="ParentValue1" Value2="ParentValue2" Value3="ParentValue3" ComponentUpdated="OnComponentChanged" />
 </div>
 
 @code {
-    public int ParentValue { get; set; } = 0;
-    public int ChangeCount { get; set; } = 0;
+    public int ParentValue1 { get; set; } = 0;
+    public int ParentValue2 { get; set; } = 0;
+    public int ParentValue3 { get; set; } = 0;
 
-    public void OnComponentChanged(int newValue)
+    public void OnComponentChanged(ChildComponentChangeArgument argument)
     {
-        ParentValue = newValue;
-        ChangeCount++;
+        ParentValue1 = argument.Value1;
+        ParentValue2 = argument.Value2;
+        ParentValue3 = argument.Value3;
     }
 }
