@@ -1,14 +1,17 @@
 ﻿<div class="bg-primary p-5">
     <h3>Parent</h3>
     <div>Value: @ParentValue</div>
+    <div>Change Count: @ChangeCount</div>
     <Child Value="ParentValue" ValueChanged="ParentValueChanged" />
 </div>
 
 @code {
     public int ParentValue { get; set; } = 0;
+    public int ChangeCount { get; set; } = 0;
 
     public void ParentValueChanged(int newValue)
     {
         ParentValue = newValue;
+        ChangeCount++;
     }
 }
