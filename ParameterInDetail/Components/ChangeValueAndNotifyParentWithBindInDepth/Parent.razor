@@ -1,19 +1,23 @@
 ﻿<div class="bg-primary p-5">
     <h3>Parent</h3>
     <div>Value: @_parentValue</div>
+    <div>Changes count: @ChangesCount</div>
     <ParameterInDetail.Components.ChangeValueAndNotifyParentWithBindInDepth.Child @bind-Value:get="_parentValue" />
     <ParameterInDetail.Components.ChangeValueAndNotifyParentWithBindInDepth.Child @bind-Value:get="_parentValue" @bind-Value:set="SetParentValue" />
     <ParameterInDetail.Components.ChangeValueAndNotifyParentWithBindInDepth.Child @bind-Value:get="_parentValue" @bind-Value:set="SetParentValueAsync" />
     <ParameterInDetail.Components.ChangeValueAndNotifyParentWithBindInDepth.Child @bind-Value:get="_parentValue" @bind-Value:after="AfterSetParentValue" />
+    <ParameterInDetail.Components.ChangeValueAndNotifyParentWithBindInDepth.Child @bind-Value:get="_parentValue" @bind-Value:after="AfterSetParentValueAsync" />
 </div>
 
 @code {
     private int _parentValue = 0;
+    public int ChangesCount { get; set; } = 0;
 
     public void SetParentValue(int newValue)
     {
         Console.WriteLine("SetParentValue executed");
         _parentValue = newValue;
+        ChangesCount++;
     }
 
     public async Task SetParentValueAsync(int newValue)
@@ -21,11 +25,21 @@
         await Task.Delay(1000); // Simulate some async work
         Console.WriteLine("SetParentValueAsync executed");
         _parentValue = newValue;
+        ChangesCount++;
     }
 
     public void AfterSetParentValue()
     {
         Console.WriteLine("AfterSetParentValue executed");
         _parentValue = _parentValue * 100;
+        ChangesCount++;
+    }
+
+    public async Task AfterSetParentValueAsync()
+    {
+        await Task.Delay(1000); // Simulate some async work
+        Console.WriteLine("AfterSetParentValueAsync executed");
+        _parentValue = _parentValue * 100;
+        ChangesCount++;
     }
 }
