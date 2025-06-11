@@ -2,8 +2,9 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using SingleSourceOfTruth;
 using SingleSourceOfTruth.Components.CascadingParameterRootLevel;
+using SingleSourceOfTruth.Components.TransferService;
 
-WebAssemblyHostBuilder builder = WebAssemblyHostBuilder.CreateDefault(args);
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
@@ -15,5 +16,6 @@ builder.Services.AddCascadingValue(sp =>
 
     return value.Source;
 });
+builder.Services.AddScoped<BlazorSchoolTransferService>();
 
 await builder.Build().RunAsync();

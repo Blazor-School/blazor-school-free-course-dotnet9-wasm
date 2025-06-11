@@ -1,0 +1,32 @@
+﻿@inject BlazorSchoolTransferService TransferService
+@implements IDisposable
+
+<div class="bg-danger p-5">
+    <h3>Component3</h3>
+    <div>Value: @TransferService.Message</div>
+    <button type="button" @onclick="ChangeValue">Change Value</button>
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        TransferService.MessageChanged += OnTransferServiceChanged;
+    }
+
+    public void OnTransferServiceChanged(object? sender, EventArgs e)
+    {
+        StateHasChanged();
+    }
+
+    public void ChangeValue()
+    {
+        var random = new Random();
+        TransferService.Message = "Message updated from Component3";
+        TransferService.NotifyChanged();
+    }
+
+    public void Dispose()
+    {
+        TransferService.MessageChanged -= OnTransferServiceChanged;
+    }
+}
