@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-
-namespace SingleSourceOfTruth.Components.TransferService;
+﻿namespace SingleSourceOfTruth.Components.TransferService;
 
 public class BlazorSchoolTransferService
 {
