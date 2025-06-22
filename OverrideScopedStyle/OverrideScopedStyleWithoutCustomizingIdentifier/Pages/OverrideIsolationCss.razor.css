@@ -1,0 +1,4 @@
+﻿.parent ::deep .example::after
+{
+    content: "OverrideIsolationCss.razor.css";
+}

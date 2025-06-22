@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleSourceOfTruth", "Sing
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComponentStyling", "ComponentStyling\ComponentStyling.csproj", "{110C4475-01E6-428E-BFB9-179258849D2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverrideScopedStyleWithoutCustomizingIdentifier", "OverrideScopedStyle\OverrideScopedStyleWithoutCustomizingIdentifier\OverrideScopedStyleWithoutCustomizingIdentifier.csproj", "{C2577326-90D3-4E27-ACDF-F34100894C01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverrideScopedStyleWithCustomIdentifier", "OverrideScopedStyle\OverrideScopedStyleWithCustomIdentifier\OverrideScopedStyleWithCustomIdentifier.csproj", "{B7F82D58-B52F-492C-B358-AFD064906F48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{110C4475-01E6-428E-BFB9-179258849D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{110C4475-01E6-428E-BFB9-179258849D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{110C4475-01E6-428E-BFB9-179258849D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2577326-90D3-4E27-ACDF-F34100894C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2577326-90D3-4E27-ACDF-F34100894C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2577326-90D3-4E27-ACDF-F34100894C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2577326-90D3-4E27-ACDF-F34100894C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F82D58-B52F-492C-B358-AFD064906F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F82D58-B52F-492C-B358-AFD064906F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F82D58-B52F-492C-B358-AFD064906F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F82D58-B52F-492C-B358-AFD064906F48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

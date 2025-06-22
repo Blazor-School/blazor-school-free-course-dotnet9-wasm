@@ -1,0 +1,4 @@
+﻿.parent .example[blazor-school-identifier]::after
+{
+    content: "blazor-school.css";
+}

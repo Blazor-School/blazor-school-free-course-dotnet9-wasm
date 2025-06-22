@@ -1,0 +1,3 @@
+﻿.example::after {
+    content: "Component.razor.css";
+}
